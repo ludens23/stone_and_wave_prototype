@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://t0se74sktxoy"]
+
+[ext_resource type="Script" uid="uid://dxekxbuwddxm3" path="res://wall.gd" id="1_vpcpj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pw8ia"]
+size = Vector2(50, 400)
+
+[node name="Wall" type="StaticBody2D" groups=["wall"]]
+collision_layer = 2
+script = ExtResource("1_vpcpj")
+wall_drain_cost = 50.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -25.0
+offset_top = -200.0
+offset_right = 25.0
+offset_bottom = 200.0
+color = Color(0.6, 0.4, 0.2, 1)
+
+[node name="PhysicalCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pw8ia")
+
+[node name="DrainZone" type="Area2D" parent="." groups=["wall_drain_zone"]]
+collision_layer = 2
+
+[node name="DrainCollider" type="CollisionShape2D" parent="DrainZone"]
+shape = SubResource("RectangleShape2D_pw8ia")

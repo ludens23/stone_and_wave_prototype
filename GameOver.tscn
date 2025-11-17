@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://bymy6imbjox1p"]
+
+[ext_resource type="Script" uid="uid://oiicwuuac0jd" path="res://game_over.gd" id="1_6k3o4"]
+
+[node name="GameOver" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_6k3o4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 170.0
+offset_top = 34.0
+offset_right = -93.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.96000123, 0.9600003)
+color = Color(0.9529412, 0.5019608, 0.4117647, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = -134.0
+offset_right = 158.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ResultLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.10733675, 0.09088334, 0.046421014, 1)
+theme_override_font_sizes/font_size = 40
+text = "Score: 0"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Restart"
+
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

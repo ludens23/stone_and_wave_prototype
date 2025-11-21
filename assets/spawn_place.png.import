@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://be76yv6mv1tpu"
-path="res://.godot/imported/birth_point.png-350fec3869da876b53411cefe2583832.ctex"
+path="res://.godot/imported/spawn_place.png-61c34ca1ef1ee9014ac90c010f9e3b3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/birth_point.png"
-dest_files=["res://.godot/imported/birth_point.png-350fec3869da876b53411cefe2583832.ctex"]
+source_file="res://assets/spawn_place.png"
+dest_files=["res://.godot/imported/spawn_place.png-61c34ca1ef1ee9014ac90c010f9e3b3f.ctex"]
 
 [params]
 

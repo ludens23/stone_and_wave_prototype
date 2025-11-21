@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp3hyhxyyo2xo"]
+
+[ext_resource type="PackedScene" uid="uid://t0se74sktxoy" path="res://Wall.tscn" id="1_rfpkf"]
+[ext_resource type="PackedScene" uid="uid://bx65mn2b4jvvo" path="res://EnergyBeam.tscn" id="2_6fnve"]
+
+[node name="TestArea" type="Node2D"]
+
+[node name="Wall" parent="." instance=ExtResource("1_rfpkf")]
+position = Vector2(1970, 75)
+
+[node name="Wall2" parent="." instance=ExtResource("1_rfpkf")]
+position = Vector2(2743, 67)
+scale = Vector2(4, 1)
+
+[node name="Wall3" parent="." instance=ExtResource("1_rfpkf")]
+position = Vector2(3873, 67)
+
+[node name="Wall4" parent="." instance=ExtResource("1_rfpkf")]
+position = Vector2(2371, -223)
+
+[node name="Wall5" parent="." instance=ExtResource("1_rfpkf")]
+position = Vector2(3590, -211)
+
+[node name="EnergyBeam" parent="." instance=ExtResource("2_6fnve")]
+position = Vector2(3338, -31)
+
+[node name="EnergyBeam2" parent="." instance=ExtResource("2_6fnve")]
+position = Vector2(1255, -31)
+
+[node name="EnergyBeam3" parent="." instance=ExtResource("2_6fnve")]
+position = Vector2(1805, -27)

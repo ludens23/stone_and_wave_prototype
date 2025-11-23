@@ -11,9 +11,24 @@ config_version=5
 [application]
 
 config/name="Stone_and_Wave"
-run/main_scene="res://Main.tscn"
+run/main_scene="uid://b0odqis4csstn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SaveData="*res://src/autoload/save_data.gd"
+AudioManager="*res://src/ui/AudioManager.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/richtext2/plugin.cfg")
 
 [input]
 
@@ -42,3 +57,11 @@ move_down={
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.99215686, 0.9882353, 0.96862745, 1)
+
+[richer_text_label]
+
+fonts={
+&"Gilroy": "res://assets/fonts/Gilroy.otf",
+&"Gilroy.woff": "res://assets/fonts/Gilroy-Bold.woff.ttf",
+&"bigjohn": "res://assets/fonts/bigjohn.otf"
+}

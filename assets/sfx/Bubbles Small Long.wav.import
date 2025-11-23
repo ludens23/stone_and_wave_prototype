@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0uw41um6vq38"
+path="res://.godot/imported/Bubbles Small Long.wav-40523b40982a395d474ec785218e5add.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Bubbles Small Long.wav"
+dest_files=["res://.godot/imported/Bubbles Small Long.wav-40523b40982a395d474ec785218e5add.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

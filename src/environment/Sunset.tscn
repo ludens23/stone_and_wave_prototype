@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctgjy8vj80asn"]
+
+[ext_resource type="Shader" uid="uid://dok7ncn3bf2ic" path="res://src/environment/sunset.gdshader" id="1_ct7nl"]
+[ext_resource type="Script" uid="uid://dhhwbsxnm0ysx" path="res://src/environment/sunset.gd" id="1_fwwgx"]
+
+[sub_resource type="Gradient" id="Gradient_fwwgx"]
+offsets = PackedFloat32Array(0.017361112, 0.25694445, 0.5416667, 0.7673611, 1)
+colors = PackedColorArray(0.1612922, 0.9190168, 0.8326394, 1, 0.7362688, 0.13935113, 0.65510523, 1, 0.12885925, 0.011928709, 0.02931882, 1, 0.8643821, 0.58553857, 0.19731697, 1, 0.16078432, 0.91764706, 0.83137256, 1)
+
+[sub_resource type="Gradient" id="Gradient_yd1n7"]
+offsets = PackedFloat32Array(0, 0.2638889, 0.5833333, 0.7777778, 1)
+colors = PackedColorArray(1.3433625, 1.3997424, 1.4617602, 1, 1.3663247, 0.5373009, 0.4019501, 1, 0.13404596, 0.16539034, 0.15988071, 1, 0.74459916, 0.6902444, 0.3836756, 1, 1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fwwgx"]
+shader = ExtResource("1_ct7nl")
+shader_parameter/bottom_color = Color(0, 0, 0.34901962, 1)
+shader_parameter/top_color = Color(0, 0.7137255, 0.92941177, 1)
+shader_parameter/beam_distance = 0.07200000342
+shader_parameter/beam_height = 0.03200000152
+shader_parameter/beam_width = 0.1890000089775
+shader_parameter/total_phases = 3
+
+[node name="Background" type="Node2D"]
+script = ExtResource("1_fwwgx")
+top_color_gradient = SubResource("Gradient_fwwgx")
+bottom_color_gradient = SubResource("Gradient_yd1n7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fwwgx")
+offset_left = 3.0
+offset_right = 43.0
+offset_bottom = 40.0
+scale = Vector2(31.960001, 18.119997)

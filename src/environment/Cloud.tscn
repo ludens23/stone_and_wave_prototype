@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dec6soi08j7r2"]
+
+[ext_resource type="Shader" uid="uid://cf0ju8hxhs6p1" path="res://src/environment/cloud.gdshader" id="1_rsr2b"]
+[ext_resource type="Texture2D" uid="uid://ctu7wux8g5g6" path="res://assets/materials/bubbles.png" id="2_6dx8v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6dx8v"]
+shader = ExtResource("1_rsr2b")
+shader_parameter/bottom_color = Color(0.67058825, 1, 1, 1)
+shader_parameter/top_color = Color(0.51579404, 0.6725297, 1, 1)
+shader_parameter/tex = ExtResource("2_6dx8v")
+shader_parameter/layer_count = 3
+shader_parameter/time_scale = 0.2
+shader_parameter/base_intensity = 0.5
+shader_parameter/size = 0.6740100320147501
+
+[node name="Cloud" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6dx8v")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(31.96, 17.96)

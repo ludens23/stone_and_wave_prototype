@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0uwy0hapjrai"]
+
+[ext_resource type="Shader" uid="uid://cgsjqthdat2yl" path="res://assets/shaders/sceen_effects/CRT_01.gdshader" id="1_nx1jb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jvobv"]
+shader = ExtResource("1_nx1jb")
+shader_parameter/curvature = 6.0
+shader_parameter/vignette_multiplier = 2.0
+shader_parameter/ca_strength = 2.5
+shader_parameter/blur_strength = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_x1j10"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[node name="CRT_01" type="CanvasLayer"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_jvobv")
+position = Vector2(642, 359)
+mesh = SubResource("QuadMesh_x1j10")

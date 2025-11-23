@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1jgkgctktusg"
+path="res://.godot/imported/Wave Slow C.wav-e6dcc34b1ede8b128c5553c6498a3093.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Wave Slow C.wav"
+dest_files=["res://.godot/imported/Wave Slow C.wav-e6dcc34b1ede8b128c5553c6498a3093.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

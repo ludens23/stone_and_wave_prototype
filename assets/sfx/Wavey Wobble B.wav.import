@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dw7oqhscne2kf"
+path="res://.godot/imported/Wavey Wobble B.wav-3c27cdab1c8efe84496a9c5e9bd8d59f.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Wavey Wobble B.wav"
+dest_files=["res://.godot/imported/Wavey Wobble B.wav-3c27cdab1c8efe84496a9c5e9bd8d59f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

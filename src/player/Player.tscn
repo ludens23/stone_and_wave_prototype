@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://h6i1m3htuh44"]
+
+[ext_resource type="Script" uid="uid://bxxcymyqdjb7n" path="res://src/player/player.gd" id="1_r6mpn"]
+[ext_resource type="Shader" uid="uid://s86ka1tptytq" path="res://src/player/particle_visual.gdshader" id="2_fxta6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_et40r"]
+size = Vector2(32, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f6jfy"]
+shader = ExtResource("2_fxta6")
+shader_parameter/circle_color = Color(1, 1, 1, 1)
+shader_parameter/anti_alias_width = 0.05
+
+[sub_resource type="Animation" id="Animation_kpjcp"]
+resource_name = "Blink"
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParticleVisual:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.4943413, 1.4693543, 1.6255223, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kne1u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParticleVisual:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e80uo"]
+_data = {
+&"Blink": SubResource("Animation_kpjcp"),
+&"RESET": SubResource("Animation_kne1u")
+}
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_r6mpn")
+
+[node name="ParticleCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_et40r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ParticleVisual" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_f6jfy")
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="WaveVisual" type="Line2D" parent="."]
+width = 3.0
+default_color = Color(0.2, 0.6, 1, 1)
+
+[node name="WaveSensor" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="WaveCollider" type="CollisionShape2D" parent="WaveSensor"]
+shape = SubResource("RectangleShape2D_et40r")
+
+[node name="ReassembleTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="FXPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_e80uo")
+}
+
+[connection signal="area_entered" from="WaveSensor" to="." method="_on_wave_sensor_area_entered"]
+[connection signal="area_exited" from="WaveSensor" to="." method="_on_wave_sensor_area_exited"]
+[connection signal="timeout" from="ReassembleTimer" to="." method="_on_reassemble_timer_timeout"]

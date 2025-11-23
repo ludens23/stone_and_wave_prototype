@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bya8p1n57ecid"
+path="res://.godot/imported/RETRO Jump Up Bounce Long 03.wav-fc93442d1029d2fc52c544de5b80926b.sample"
+
+[deps]
+
+source_file="res://assets/sfx/RETRO Jump Up Bounce Long 03.wav"
+dest_files=["res://.godot/imported/RETRO Jump Up Bounce Long 03.wav-fc93442d1029d2fc52c544de5b80926b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bub7effci0unc"
+path="res://.godot/imported/Event 13.mp3-e1a3962c37acba06bc066cd8296577b6.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Event 13.mp3"
+dest_files=["res://.godot/imported/Event 13.mp3-e1a3962c37acba06bc066cd8296577b6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

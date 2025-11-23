@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://byssjrggoi5kg"]
+
+[ext_resource type="Script" uid="uid://demxk5824drcw" path="res://src/level/story.gd" id="1_rr0v6"]
+[ext_resource type="PackedScene" uid="uid://c0uwy0hapjrai" path="res://src/ui/crt_01.tscn" id="2_rr0v6"]
+[ext_resource type="PackedScene" uid="uid://h6i1m3htuh44" path="res://src/player/Player.tscn" id="3_ium36"]
+[ext_resource type="PackedScene" uid="uid://dec6soi08j7r2" path="res://src/environment/Cloud.tscn" id="3_tv71f"]
+[ext_resource type="PackedScene" uid="uid://xuonc6xxx4hr" path="res://src/ui/UI.tscn" id="4_ccem8"]
+[ext_resource type="PackedScene" uid="uid://cdpbuxrqebp0u" path="res://src/environment/ocean.tscn" id="7_sh5s0"]
+[ext_resource type="PackedScene" uid="uid://ctgjy8vj80asn" path="res://src/environment/Sunset.tscn" id="7_tv71f"]
+[ext_resource type="PackedScene" uid="uid://bymy6imbjox1p" path="res://src/ui/GameOver.tscn" id="8_u00fq"]
+[ext_resource type="PackedScene" uid="uid://cp3hyhxyyo2xo" path="res://src/level/test_area.tscn" id="9_4b5wg"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_rr0v6")
+
+[node name="CRT_01" parent="." instance=ExtResource("2_rr0v6")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Ocean" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("7_sh5s0")]
+position = Vector2(-1, 547)
+
+[node name="Background" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("7_tv71f")]
+position = Vector2(-11, 25)
+scale = Vector2(1.0119668, 0.7589698)
+
+[node name="Cloud" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("3_tv71f")]
+position = Vector2(-8, -692)
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="TestArea" parent="Environment" instance=ExtResource("9_4b5wg")]
+
+[node name="UI" parent="." instance=ExtResource("4_ccem8")]
+
+[node name="GameOver" parent="." instance=ExtResource("8_u00fq")]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("3_ium36")]
+
+[connection signal="energy_changed" from="Player" to="UI" method="update_energy_bar"]
+[connection signal="state_changed" from="Player" to="UI" method="update_form_label"]

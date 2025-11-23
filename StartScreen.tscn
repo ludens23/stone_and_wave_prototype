@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0odqis4csstn"]
+
+[ext_resource type="Script" uid="uid://ctftippjjlph7" path="res://src/level/start_screen.gd" id="1_gtard"]
+[ext_resource type="PackedScene" uid="uid://c0uwy0hapjrai" path="res://src/ui/crt_01.tscn" id="2_vuion"]
+[ext_resource type="Texture2D" uid="uid://bu46hf207n00h" path="res://assets/sprites/start_test01.png" id="3_06rl2"]
+[ext_resource type="FontFile" uid="uid://df0j0is4l7asl" path="res://assets/fonts/bigjohn.otf" id="4_bhimr"]
+[ext_resource type="FontFile" uid="uid://dga54ekay2wpn" path="res://assets/fonts/Gilroy.otf" id="5_xupoq"]
+[ext_resource type="FontFile" uid="uid://cimilg0e855a5" path="res://assets/fonts/Gilroy-Bold.woff.ttf" id="6_ykci1"]
+
+[node name="StartScreen" type="Node2D"]
+script = ExtResource("1_gtard")
+
+[node name="CRT_01" parent="." instance=ExtResource("2_vuion")]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(723, 385)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_06rl2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 683.0
+offset_top = 146.0
+offset_right = 1143.0
+offset_bottom = 326.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07389978, 0.16081408, 0.22414216, 1)
+theme_override_fonts/font = ExtResource("4_bhimr")
+theme_override_font_sizes/font_size = 45
+text = "Stone and Wave"
+
+[node name="NewGameButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_xupoq")
+text = "New Game"
+
+[node name="EndlessButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_xupoq")
+text = "Endless Mode"
+
+[node name="SettingsButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_xupoq")
+text = "Settings"
+
+[node name="HighScoreLabel" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.078431375, 0.16078432, 0.22352941, 1)
+theme_override_fonts/font = ExtResource("6_ykci1")
+theme_override_font_sizes/font_size = 30
+text = "High Score:"

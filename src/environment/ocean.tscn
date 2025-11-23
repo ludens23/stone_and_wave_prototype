@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdpbuxrqebp0u"]
+
+[ext_resource type="Shader" uid="uid://u3tvgt105ald" path="res://src/environment/ocean.gdshader" id="1_1u8s4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0yic"]
+shader = ExtResource("1_1u8s4")
+shader_parameter/bottom_color = Color(2.8878452e-07, 0, 0.6662193, 1)
+shader_parameter/top_color = Color(0.18205565, 0.4131754, 1, 1)
+shader_parameter/wave_amp = 0.03600000171
+shader_parameter/wave_size = 4.2610001548975
+shader_parameter/wave_time_mul = 0.74000003189012
+shader_parameter/total_phases = 6
+
+[node name="Ocean" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_p0yic")
+offset_right = 1290.0
+offset_bottom = 712.0

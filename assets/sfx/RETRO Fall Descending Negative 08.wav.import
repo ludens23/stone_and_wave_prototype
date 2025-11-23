@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3ol6yg83pcuu"
+path="res://.godot/imported/RETRO Fall Descending Negative 08.wav-df7dc9da5de6d78f2db3bb12872ce7e5.sample"
+
+[deps]
+
+source_file="res://assets/sfx/RETRO Fall Descending Negative 08.wav"
+dest_files=["res://.godot/imported/RETRO Fall Descending Negative 08.wav-df7dc9da5de6d78f2db3bb12872ce7e5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
